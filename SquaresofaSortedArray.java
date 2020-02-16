@@ -32,3 +32,27 @@ class Solution {
         return (a*a);
     }
 }
+
+
+/************ another optinal solution *********/
+class Solution {
+    public int[] sortedSquares(int[] A) {
+        
+        // time complexity Big O(N)
+        int left = 0;
+        int right = A.length-1;
+        int[] result = new int[A.length];
+        
+        for(int  i =A.length-1;i>=0;i--){
+            
+            if(Math.abs(A[left])>A[right]){
+                result[i]=A[left]*A[left];
+                left++;
+            }else{
+                result[i]=A[right]*A[right];
+                right--;
+            }
+        }
+        return result;
+    }
+}
