@@ -32,11 +32,11 @@ class Solution {
         
         for(int i=bucket.length-1;i>=0;i--){
             
-        if(bucket[i]!=null){
+        if(bucket[i] != null){
             
             Collections.sort(bucket[i]);
             
-            for(int j=0;j<bucket[i].size(); i++){
+            for(int j=0;j<bucket[i].size() && result.size()<k; i++){
                 
                 result.add(bucket[i].get(j));
             }
