@@ -45,3 +45,57 @@ public class Main
 	    return min;
 	}
 }
+
+
+
+//******************* Effective solution Big o(n)************
+
+public class HelloWorld{
+
+     public static void main(String []args){
+         
+         
+        String[] words = {"practice","makes","perfect","coding","makes"};
+ 
+        String word1 = "coding";
+        String word2 = "practice";
+        
+        int result = shortestDistance(words,word1,word2);
+        
+        System.out.println("Shortest Distance: "+ result);
+     }
+     
+     /// Big O(n)
+     public static int shortestDistance(String[] words,String word1,String word2){
+         
+         
+         int left = -1;
+         int right = -1;
+         
+         int shortDistance = words.length;
+         
+         for(int i= 0;i<words.length;i++){
+             
+             if(word1.equals(words[i])){
+                 
+                 left = i;
+             }
+             if(word2.equals(words[i])){
+                 right  = i;
+             }
+             
+             if(left>=0 && right>=0){
+                 
+             shortDistance = Math.min(shortDistance,Math.abs(right-left
+             
+             ));
+             }
+             
+         }
+         
+         return shortDistance;
+         
+         
+     }
+
+}
